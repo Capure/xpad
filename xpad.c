@@ -1064,9 +1064,9 @@ static void xpadone_process_packet(struct usb_xpad *xpad, u16 cmd, unsigned char
 					(__u16) le16_to_cpup((__le16 *)(data + 8)));
 		} else if (xpad->mapping & MAP_THRUSTMASTER_WHEEL) {
 			input_report_abs(dev, ABS_Z,
-					((__u16) le16_to_cpup((__le16 *)(data + 10)))*2);
+					(__u16) le16_to_cpup((__le16 *)(data + 10)));
 			input_report_abs(dev, ABS_RZ,
-				((__u16) le16_to_cpup((__le16 *)(data + 8)))*2);
+					(__u16) le16_to_cpup((__le16 *)(data + 8)));
 		} else {
 			input_report_abs(dev, ABS_Z,
 					(__u16) le16_to_cpup((__le16 *)(data + 6)));
